@@ -273,7 +273,7 @@
             </div>
         </div>
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center font-gta text-sm tracking-[5px] opacity-20">
-            <div>© 2025 VELTRIXRP PROJECT</div>
+            <div>© 2026 VELTRIXRP </div>
             <div class="mt-4 md:mt-0">DEVELOPED BY ROOTLINK.IT</div>
         </div>
     </footer>
