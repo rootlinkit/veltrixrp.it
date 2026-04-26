@@ -165,11 +165,10 @@
                     <li><a href="#" class="hover:orange-accent transition italic">Wiki Server</a></li>
                 </ul>
             </div>
-            <div>
+            <!--<div>
                 <h4 class="font-bold uppercase tracking-widest mb-8 text-white">Pagamenti</h4>
                 <p class="text-gray-500 text-sm mb-6 leading-relaxed">Accettiamo carte di credito e PayPal tramite il checkout sicuro e certificato di Tebex.</p>
-                <div class="text-gray-400 text-xs font-mono">P. IVA: IT03936120793</div>
-            </div>
+            </div> -->
         </div>
         <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 uppercase tracking-widest font-bold">
             <div>&copy; <?php echo date("Y"); ?> VeltrixRP. Tutti i diritti riservati.</div>
