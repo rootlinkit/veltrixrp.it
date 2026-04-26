@@ -228,7 +228,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="feature-card p-12" data-aos="fade-up">
                     <i class="fa-solid fa-server text-[#ff6b00] text-4xl mb-8"></i>
-                    <h3 class="font-gta text-3xl mb-4">Infrastruttura Apex</h3>
+                    <h3 class="font-gta text-3xl mb-4">Infrastruttura Next-gen</h3>
                     <p class="text-white/40 leading-relaxed uppercase text-xs tracking-wider font-bold">Hardware dedicato e protezione DDoS di livello enterprise per sessioni di gioco ininterrotte.</p>
                 </div>
                 <div class="feature-card p-12" data-aos="fade-up" data-aos-delay="200">
