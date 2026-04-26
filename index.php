@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VeltrixRP | Official Website</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -35,14 +36,14 @@
 
     <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md px-8 py-4 flex justify-between items-center border-b border-white/5">
         <div class="flex items-center space-x-8 uppercase font-bold tracking-widest text-sm">
-            <a href="#" class="hover:orange-accent transition">Home</a>
-            <a href="#" class="hover:orange-accent transition">Store</a>
-            <a href="#" class="hover:orange-accent transition">FAQ</a>
+            <a href="https://veltrixrp.it" class="hover:orange-accent transition">Home</a>
+            <a href="https://store.veltrixrp.it" class="hover:orange-accent transition">Store</a>
+            <!-- <a href="#" class="hover:orange-accent transition">FAQ</a> -->
         </div>
         <div class="flex items-center space-x-6">
-            <a href="login.php" class="bg-[#5865F2] hover:bg-[#4752c4] px-6 py-2 rounded font-bold text-sm transition">
+            <!--<a href="login.php" class="bg-[#5865F2] hover:bg-[#4752c4] px-6 py-2 rounded font-bold text-sm transition">
                 Accedi con Discord
-            </a>
+            </a> -->
             <i class="fa-solid fa-cart-shopping text-lg cursor-pointer hover:orange-accent"></i>
             <i class="fa-brands fa-discord text-xl cursor-pointer hover:orange-accent"></i>
         </div>
@@ -51,10 +52,10 @@
     <header class="hero-section flex flex-col items-center justify-center text-center">
         <img src="assets/logo.png" alt="Veltrix Hawk" class="w-80 mb-12 drop-shadow-[0_0_35px_rgba(255,107,0,0.5)]">
         <div class="flex space-x-4">
-            <a href="#" class="bg-orange-accent text-black px-12 py-3 rounded-sm font-black uppercase tracking-tighter text-xl btn-glow">
+            <a href="https://store.veltrixrp.it" class="bg-orange-accent text-black px-12 py-3 rounded-sm font-black uppercase tracking-tighter text-xl btn-glow">
                 Visita lo store
             </a>
-            <a href="#" class="bg-white/5 hover:bg-white/10 border border-white/10 px-12 py-3 rounded-sm font-black uppercase tracking-tighter text-xl transition flex items-center">
+            <a href="https://discord.veltrixrp.it" class="bg-white/5 hover:bg-white/10 border border-white/10 px-12 py-3 rounded-sm font-black uppercase tracking-tighter text-xl transition flex items-center">
                 <i class="fa-brands fa-discord mr-3"></i> Discord
             </a>
         </div>
