@@ -191,10 +191,6 @@
                 <a href="#about" class="font-gta text-xl tracking-widest border-b-2 border-white/20 hover:border-[#ff6b00] transition-all pb-1">Scopri di più</a>
             </div>
         </div>
-
-        <div class="absolute bottom-10 left-12 hidden md:block">
-            <p class="font-gta text-xs tracking-[5px] text-white/30 uppercase">Coordinates: 34.0522° N, 118.2437° W</p>
-        </div>
     </header>
 
     <section id="about" class="py-32 px-6 bg-[#050505]">
