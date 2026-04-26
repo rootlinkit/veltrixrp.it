@@ -3,324 +3,357 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VeltrixRP | The Ultimate Experience</title>
+    <title>VELTRIXRP | THE APEX OF ROLEPLAY</title>
     <link rel="icon" type="image/png" href="assets/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root {
             --primary: #ff6b00;
-            --primary-glow: rgba(255, 107, 0, 0.4);
-            --bg-dark: #050505;
+            --primary-rgb: 255, 107, 0;
+            --bg: #020202;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: white;
+            background-color: var(--bg);
+            color: #fff;
             font-family: 'Rajdhani', sans-serif;
             overflow-x: hidden;
         }
 
-        body::before {
-            content: " ";
-            display: block;
-            position: fixed;
-            top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
-                        linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 255, 255, 0.03));
-            z-index: 9999;
-            background-size: 100% 4px, 3px 100%;
-            pointer-events: none;
+        .orbitron { font-family: 'Orbitron', sans-serif; }
+
+        .hero-vid {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+            filter: saturate(0) brightness(0.5);
         }
 
-        .hero-section {
-            background: linear-gradient(rgba(5, 5, 5, 0.6), rgba(5, 5, 5, 0.9)), 
-                        url('https://r4.wallpaperflare.com/wallpaper/74/436/533/gta-v-gta-5-video-games-grand-theft-auto-wallpaper-8900086dc1ca3d3b769738dfc0f17662.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        .orange-accent { color: var(--primary); }
-        .bg-orange-accent { background-color: var(--primary); }
-        
-        .glass-card {
-            background: rgba(20, 20, 20, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .glass-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px -10px var(--primary-glow);
-        }
-
-        .btn-main {
+        .glitch {
             position: relative;
+            display: inline-block;
+        }
+
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--bg);
+        }
+
+        .glitch::after {
+            left: 2px;
+            text-shadow: -2px 0 #ff00c1;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+
+        .glitch::before {
+            left: -2px;
+            text-shadow: 2px 0 #00fff9;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(31px, 9999px, 94px, 0); }
+            20% { clip: rect(62px, 9999px, 42px, 0); }
+            40% { clip: rect(16px, 9999px, 78px, 0); }
+            60% { clip: rect(87px, 9999px, 11px, 0); }
+            80% { clip: rect(44px, 9999px, 5px, 0); }
+            100% { clip: rect(9px, 9999px, 32px, 0); }
+        }
+
+        @keyframes glitch-anim2 {
+            0% { clip: rect(65px, 9999px, 100px, 0); }
+            20% { clip: rect(12px, 9999px, 58px, 0); }
+            40% { clip: rect(95px, 9999px, 33px, 0); }
+            60% { clip: rect(21px, 9999px, 71px, 0); }
+            80% { clip: rect(2px, 9999px, 90px, 0); }
+            100% { clip: rect(44px, 9999px, 12px, 0); }
+        }
+
+        .cyber-card {
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid rgba(255, 107, 0, 0.1);
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+            transition: all 0.3s ease;
+        }
+
+        .cyber-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 30px rgba(255, 107, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .cyber-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 2px; height: 100%;
+            background: var(--primary);
+            transform: scaleY(0);
+            transition: transform 0.3s;
+        }
+
+        .cyber-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .nav-link {
+            position: relative;
+            font-size: 0.75rem;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: -5px; left: 0; width: 0; height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .scanline {
+            width: 100%;
+            height: 100px;
+            z-index: 10;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(255, 107, 0, 0.1) 50%, rgba(0, 0, 0, 0) 100%);
+            opacity: 0.1;
+            position: absolute;
+            bottom: 100%;
+            animation: scanline 8s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% { bottom: 100%; }
+            100% { bottom: -100%; }
+        }
+
+        .btn-apex {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            position: relative;
+            font-weight: 900;
+            text-transform: uppercase;
             overflow: hidden;
             transition: all 0.3s;
-            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+            display: inline-flex;
+            align-items: center;
         }
 
-        .btn-main:hover {
-            transform: skewX(-5deg) scale(1.05);
-            box-shadow: 0 0 25px var(--primary);
+        .btn-apex:hover {
+            background: var(--primary);
+            color: black;
+            box-shadow: 0 0 40px var(--primary);
         }
 
-        .status-pulse {
-            width: 10px;
-            height: 10px;
-            background: #00ff88;
+        .btn-apex::after {
+            content: "";
+            position: absolute;
+            width: 50px; height: 100%;
+            background: rgba(255,255,255,0.2);
+            left: -100px;
+            transform: skewX(-20deg);
+            transition: 0.5s;
+        }
+
+        .btn-apex:hover::after {
+            left: 150%;
+        }
+
+        #cursor-glow {
+            position: fixed;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(255, 107, 0, 0.08) 0%, rgba(0,0,0,0) 70%);
             border-radius: 50%;
-            display: inline-block;
-            margin-right: 8px;
-            box-shadow: 0 0 10px #00ff88;
-            animation: pulse 2s infinite;
+            pointer-events: none;
+            z-index: 1;
+            transform: translate(-50%, -50%);
         }
-
-        @keyframes pulse {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 255, 136, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); }
-        }
-
-        .text-glow {
-            text-shadow: 0 0 15px var(--primary-glow);
-        }
-
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #080808; }
-        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
-
-        .title-font { font-family: 'Syncopate', sans-serif; }
     </style>
 </head>
 <body>
 
-    <div class="fixed w-full z-[60] bg-black/90 text-[10px] uppercase tracking-[3px] py-1 px-8 border-b border-white/5 flex justify-between items-center">
-        <div><span class="status-pulse"></span> Server Status: <span class="text-[#00ff88]">Online</span></div>
-        <div class="hidden md:block">Benvenuto nel futuro del Roleplay Italiano</div>
-        <div>Player Online: <span class="orange-accent">412/512</span></div>
-    </div>
+    <div id="cursor-glow"></div>
 
-    <nav id="navbar" class="fixed w-full z-50 mt-6 px-8 py-4 flex justify-between items-center transition-all duration-500">
-        <div class="flex items-center space-x-10 uppercase font-bold tracking-widest text-sm">
-            <a href="#" class="hover:orange-accent transition-all duration-300 relative group">
-                Home
-                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-accent transition-all group-hover:w-full"></span>
-            </a>
-            <a href="https://store.veltrixrp.it" class="hover:orange-accent transition-all duration-300 relative group">
-                Store
-                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-accent transition-all group-hover:w-full"></span>
-            </a>
-            <a href="#" class="hover:orange-accent transition-all duration-300 relative group">
-                Regolamento
-                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-accent transition-all group-hover:w-full"></span>
-            </a>
+    <nav id="navbar" class="fixed w-full z-[100] px-12 py-6 flex justify-between items-center transition-all duration-700 bg-transparent">
+        <div class="flex items-center space-x-12">
+            <a href="#" class="nav-link text-white">Database</a>
+            <a href="https://store.veltrixrp.it" class="nav-link text-white">Market</a>
+            <a href="#" class="nav-link text-white">Records</a>
         </div>
         
-        <div class="flex items-center space-x-6">
-            <div class="flex space-x-4 mr-6 border-r border-white/10 pr-6">
-                <i class="fa-brands fa-discord text-xl cursor-pointer hover:orange-accent transition"></i>
-                <i class="fa-brands fa-instagram text-xl cursor-pointer hover:orange-accent transition"></i>
+        <div class="flex items-center space-x-8">
+            <div class="h-px w-12 bg-white/20 hidden lg:block"></div>
+            <div class="flex space-x-6">
+                <i class="fa-brands fa-discord text-xl hover:text-[#ff6b00] cursor-pointer transition"></i>
+                <i class="fa-brands fa-instagram text-xl hover:text-[#ff6b00] cursor-pointer transition"></i>
             </div>
-            <a href="#" class="bg-white text-black px-6 py-2 rounded-sm font-black text-xs uppercase tracking-tighter hover:bg-orange-accent hover:text-white transition duration-500">
-                Area Riservata
-            </a>
+            <a href="#" class="orbitron text-[10px] border border-white/20 px-4 py-2 hover:bg-white hover:text-black transition">IDENTIFY_SYSTEM</a>
         </div>
     </nav>
 
-    <header class="hero-section h-screen flex flex-col items-center justify-center text-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
-        
-        <div data-aos="zoom-out" data-aos-duration="1500">
-            <img src="assets/logo.png" alt="Veltrix Logo" class="w-64 md:w-96 mb-8 drop-shadow-[0_0_50px_rgba(255,107,0,0.3)] hover:scale-105 transition-transform duration-700">
+    <header class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <img src="https://r4.wallpaperflare.com/wallpaper/74/436/533/gta-v-gta-5-video-games-grand-theft-auto-wallpaper-8900086dc1ca3d3b769738dfc0f17662.jpg" class="hero-vid">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#020202] via-transparent to-[#020202]"></div>
+        <div class="scanline"></div>
+
+        <div class="relative z-10 text-center px-4">
+            <div data-aos="zoom-in" data-aos-duration="2000">
+                <img src="assets/logo.png" class="w-48 md:w-64 mx-auto mb-12 drop-shadow-[0_0_80px_rgba(255,107,0,0.4)]">
+            </div>
+            <h1 class="orbitron text-5xl md:text-8xl font-black mb-4 tracking-tighter" data-aos="fade-up">
+                <span class="glitch" data-text="VELTRIX">VELTRIX</span><span class="text-[#ff6b00]">RP</span>
+            </h1>
+            <div class="flex flex-col items-center gap-6" data-aos="fade-up" data-aos-delay="400">
+                <p class="orbitron text-xs md:text-sm tracking-[0.5em] text-white/60 uppercase">High Performance Roleplay Environment</p>
+                <div class="flex flex-col md:flex-row gap-6 mt-8">
+                    <a href="#" class="btn-apex orbitron">Access System</a>
+                    <a href="#" class="btn-apex orbitron !bg-white !text-black !border-white">Discord_Sync</a>
+                </div>
+            </div>
         </div>
 
-        <h1 class="title-font text-2xl md:text-4xl font-bold mb-8 tracking-[10px] text-glow" data-aos="fade-up" data-aos-delay="200">
-            VELTRIX <span class="orange-accent">ROLEPLAY</span>
-        </h1>
-
-        <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6" data-aos="fade-up" data-aos-delay="400">
-            <a href="#play" class="btn-main bg-orange-accent text-black px-12 py-4 font-black uppercase tracking-widest text-xl">
-                Inizia l'Avventura
-            </a>
-            <a href="https://discord.veltrixrp.it" class="btn-main bg-white/5 backdrop-blur-md border border-white/10 px-12 py-4 font-black uppercase tracking-widest text-xl hover:bg-white/10 transition flex items-center">
-                <i class="fa-brands fa-discord mr-3 text-2xl"></i> Community
-            </a>
+        <div class="absolute bottom-12 left-12 flex flex-col space-y-4 hidden md:flex">
+            <div class="flex items-center space-x-4">
+                <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_#22c55e]"></div>
+                <span class="orbitron text-[10px] tracking-widest text-white/40">SERVER_STATUS: ONLINE</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="w-2 h-2 bg-[#ff6b00] rounded-full animate-pulse"></div>
+                <span class="orbitron text-[10px] tracking-widest text-white/40">LATENCY: 22MS</span>
+            </div>
         </div>
-
-        <a href="#stats" class="absolute bottom-10 animate-bounce text-white/30 hover:text-orange-accent transition">
-            <i class="fa-solid fa-chevron-down text-3xl"></i>
-        </a>
     </header>
 
-    <section id="stats" class="py-32 px-6 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="glass-card p-10 rounded-2xl relative overflow-hidden group" data-aos="fade-up">
-                <div class="absolute -right-4 -bottom-4 text-9 font-black opacity-[0.03] group-hover:opacity-[0.08] transition-all text-9xl uppercase tracking-tighter">USER</div>
-                <h2 class="text-6xl font-bold mb-2 italic orange-accent">300K</h2>
-                <p class="uppercase text-gray-400 font-bold tracking-[4px] text-sm">Cittadini Unici</p>
-                <div class="w-10 h-1 bg-orange-accent mt-4"></div>
-            </div>
-            
-            <div class="glass-card p-10 rounded-2xl border-t-2 border-t-orange-600 shadow-2xl shadow-orange-900/20" data-aos="fade-up" data-aos-delay="200">
-                <h2 class="text-6xl font-bold mb-2 italic">50K+</h2>
-                <p class="uppercase text-gray-400 font-bold tracking-[4px] text-sm">Membri Discord</p>
-                <div class="w-10 h-1 bg-white mt-4"></div>
+    <section class="py-40 px-6 relative bg-[#020202]">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="cyber-card p-12 group" data-aos="fade-up">
+                <div class="text-[#ff6b00] text-xs orbitron mb-6">01 // POPULATION</div>
+                <h3 class="text-6xl font-bold orbitron mb-4 italic">300K+</h3>
+                <p class="text-white/40 uppercase tracking-widest text-xs font-bold">Authorized Entities</p>
+                <div class="mt-8 h-px w-full bg-white/5 group-hover:bg-[#ff6b00]/30 transition"></div>
             </div>
 
-            <div class="glass-card p-10 rounded-2xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="400">
-                <div class="absolute -right-4 -bottom-4 text-9 font-black opacity-[0.03] group-hover:opacity-[0.08] transition-all text-9xl uppercase tracking-tighter">FPS</div>
-                <h2 class="text-6xl font-bold mb-2 italic orange-accent">144</h2>
-                <p class="uppercase text-gray-400 font-bold tracking-[4px] text-sm">FPS Medi</p>
-                <div class="w-10 h-1 bg-orange-accent mt-4"></div>
+            <div class="cyber-card p-12 group" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-[#ff6b00] text-xs orbitron mb-6">02 // STABILITY</div>
+                <h3 class="text-6xl font-bold orbitron mb-4 italic">99.9%</h3>
+                <p class="text-white/40 uppercase tracking-widest text-xs font-bold">Uptime Performance</p>
+                <div class="mt-8 h-px w-full bg-white/5 group-hover:bg-[#ff6b00]/30 transition"></div>
+            </div>
+
+            <div class="cyber-card p-12 group" data-aos="fade-up" data-aos-delay="400">
+                <div class="text-[#ff6b00] text-xs orbitron mb-6">03 // HARDWARE</div>
+                <h3 class="text-6xl font-bold orbitron mb-4 italic">DEDICATED</h3>
+                <p class="text-white/40 uppercase tracking-widest text-xs font-bold">High-End Infrastructure</p>
+                <div class="mt-8 h-px w-full bg-white/5 group-hover:bg-[#ff6b00]/30 transition"></div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 relative">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-20">
-            <div class="w-full md:w-1/2" data-aos="fade-right">
-                <div class="relative group">
-                    <div class="absolute -inset-4 bg-orange-accent/20 blur-2xl rounded-full opacity-50 group-hover:opacity-100 transition duration-1000"></div>
-                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=1000" 
-                         class="relative rounded-2xl border border-white/10 shadow-2xl filter grayscale hover:grayscale-0 transition duration-1000">
+    <section class="py-32 relative overflow-hidden bg-[#050505]">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-24 items-center">
+            <div class="w-full md:w-1/2 relative" data-aos="fade-right">
+                <div class="absolute -inset-1 bg-gradient-to-r from-[#ff6b00] to-purple-600 blur opacity-20 group-hover:opacity-100 transition duration-1000"></div>
+                <div class="relative bg-black rounded-lg overflow-hidden border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=1000" class="w-full grayscale hover:grayscale-0 transition-all duration-700">
                 </div>
             </div>
-            
             <div class="w-full md:w-1/2" data-aos="fade-left">
-                <h4 class="orange-accent font-bold uppercase tracking-[6px] mb-4">Evoluzione</h4>
-                <h2 class="title-font text-5xl font-black uppercase italic mb-8 leading-tight">Più di un <br><span class="orange-accent text-glow">Semplice Server</span></h2>
-                <p class="text-gray-400 text-lg leading-relaxed mb-8 border-l-2 border-orange-accent pl-6">
-                    VeltrixRP ridefinisce gli standard del Roleplay. Non siamo solo una città, siamo un ecosistema digitale dove ogni tua scelta ha un peso reale. Script esclusivi, economia bilanciata e una narrazione gestita da professionisti.
+                <h2 class="orbitron text-4xl md:text-6xl font-black uppercase mb-8 leading-none italic">The <span class="text-[#ff6b00]">Future</span> of RP</h2>
+                <p class="text-lg text-white/50 leading-relaxed mb-12 font-light tracking-wide border-r-2 border-[#ff6b00] pr-8">
+                    VeltrixRP non è solo un server, è un'architettura digitale progettata per chi esige il massimo. Abbiamo riscritto ogni linea di codice per garantirti un'immersione che sfida la realtà. Entra nel sistema. Domina la città.
                 </p>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="flex items-center space-x-3 text-sm font-bold uppercase tracking-widest text-gray-300">
-                        <i class="fa-solid fa-check-double orange-accent"></i> <span>Mappe Custom</span>
+                <div class="grid grid-cols-2 gap-8">
+                    <div class="flex items-center space-x-4">
+                        <i class="fa-solid fa-microchip text-[#ff6b00]"></i>
+                        <span class="orbitron text-[10px] tracking-widest">CUSTOM_SCRIPTS</span>
                     </div>
-                    <div class="flex items-center space-x-3 text-sm font-bold uppercase tracking-widest text-gray-300">
-                        <i class="fa-solid fa-check-double orange-accent"></i> <span>No Lag Policy</span>
+                    <div class="flex items-center space-x-4">
+                        <i class="fa-solid fa-bolt text-[#ff6b00]"></i>
+                        <span class="orbitron text-[10px] tracking-widest">ZERO_LATENCY</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-32 bg-black/50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <h2 class="title-font text-4xl font-black uppercase italic" data-aos="fade-up">Perchè Scegliere <span class="orange-accent">Veltrix</span></h2>
-                <div class="w-24 h-1 bg-orange-accent mx-auto mt-4"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="p-8 glass-card rounded-xl text-center group" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-white/5 rounded-lg mx-auto mb-6 flex items-center justify-center text-3xl group-hover:bg-orange-accent group-hover:text-black transition-all duration-500">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h3 class="text-xl font-bold uppercase mb-4 tracking-tighter">Anti-Cheat Pro</h3>
-                    <p class="text-gray-500 text-sm">Protezione totale contro i trasgressori per un gioco equo.</p>
-                </div>
-                <div class="p-8 glass-card rounded-xl text-center group" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-white/5 rounded-lg mx-auto mb-6 flex items-center justify-center text-3xl group-hover:bg-orange-accent group-hover:text-black transition-all duration-500">
-                        <i class="fa-solid fa-car-side"></i>
-                    </div>
-                    <h3 class="text-xl font-bold uppercase mb-4 tracking-tighter">Veicoli HQ</h3>
-                    <p class="text-gray-500 text-sm">Handling realistici e modelli 4K ottimizzati per FPS elevati.</p>
-                </div>
-                <div class="p-8 glass-card rounded-xl text-center group" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="w-16 h-16 bg-white/5 rounded-lg mx-auto mb-6 flex items-center justify-center text-3xl group-hover:bg-orange-accent group-hover:text-black transition-all duration-500">
-                        <i class="fa-solid fa-gun"></i>
-                    </div>
-                    <h3 class="text-xl font-bold uppercase mb-4 tracking-tighter">Criminal Life</h3>
-                    <p class="text-gray-500 text-sm">Sistemi di rapine e gestione gang mai visti prima.</p>
-                </div>
-                <div class="p-8 glass-card rounded-xl text-center group" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="w-16 h-16 bg-white/5 rounded-lg mx-auto mb-6 flex items-center justify-center text-3xl group-hover:bg-orange-accent group-hover:text-black transition-all duration-500">
-                        <i class="fa-solid fa-briefcase"></i>
-                    </div>
-                    <h3 class="text-xl font-bold uppercase mb-4 tracking-tighter">Economia Reale</h3>
-                    <p class="text-gray-500 text-sm">Mercato dinamico e opportunità di lavoro diversificate.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 px-6" id="play">
-        <div class="max-w-7xl mx-auto glass-card rounded-3xl p-12 flex flex-col md:flex-row justify-between items-center bg-gradient-to-r from-orange-900/20 to-transparent border-orange-accent/30" data-aos="flip-up">
-            <div class="mb-8 md:mb-0">
-                <h2 class="title-font text-4xl font-black uppercase italic mb-2">Pronto a <span class="orange-accent">Scrivere</span> la tua storia?</h2>
-                <p class="text-gray-400 uppercase tracking-widest text-sm">Unisciti agli oltre 400 giocatori attivi oggi.</p>
-            </div>
-            <a href="fivem://connect/veltrixrp.it" class="bg-white text-black px-12 py-5 rounded-full font-black uppercase tracking-[3px] hover:bg-orange-accent hover:text-white transition duration-500 shadow-xl shadow-white/10 text-center">
-                Entra Ora <i class="fa-solid fa-play ml-2"></i>
-            </a>
-        </div>
-    </section>
-
-    <footer class="bg-[#030303] pt-32 pb-10 px-8 border-t border-white/5">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+    <footer class="bg-black pt-40 pb-20 px-12 border-t border-white/5 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-[#ff6b00] blur-[150px] opacity-5"></div>
+        
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-24 relative z-10">
             <div class="col-span-1 md:col-span-2">
-                <img src="assets/logo.png" class="w-20 mb-8 grayscale opacity-50">
-                <h3 class="title-font text-2xl font-black uppercase italic mb-6">VELTRIX<span class="orange-accent">RP</span></h3>
-                <p class="text-gray-500 max-w-sm leading-relaxed mb-8">
-                    Il punto di riferimento per il roleplay italiano. Qualità, serietà e innovazione costante.
+                <h3 class="orbitron text-3xl font-black mb-8 italic">VELTRIX<span class="text-[#ff6b00]">RP</span></h3>
+                <p class="text-white/30 text-sm tracking-widest uppercase mb-12 max-w-md leading-loose">
+                    L'eccellenza non è un atto, ma un'abitudine. VeltrixRP incarna l'avanguardia del gioco di ruolo competitivo.
                 </p>
-                <div class="flex space-x-5 text-xl">
-                    <a href="#" class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-orange-accent hover:border-orange-accent transition"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="#" class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-orange-accent hover:border-orange-accent transition"><i class="fa-brands fa-twitch"></i></a>
-                    <a href="#" class="w-10 h-10 border border-white/10 rounded flex items-center justify-center hover:bg-orange-accent hover:border-orange-accent transition"><i class="fa-brands fa-youtube"></i></a>
+                <div class="flex space-x-8">
+                    <a href="#" class="text-white/20 hover:text-[#ff6b00] transition-all"><i class="fa-brands fa-tiktok text-2xl"></i></a>
+                    <a href="#" class="text-white/20 hover:text-[#ff6b00] transition-all"><i class="fa-brands fa-twitch text-2xl"></i></a>
+                    <a href="#" class="text-white/20 hover:text-[#ff6b00] transition-all"><i class="fa-brands fa-youtube text-2xl"></i></a>
                 </div>
             </div>
-            
+
             <div>
-                <h4 class="font-bold uppercase tracking-[4px] mb-8 text-white text-sm">Link Utili</h4>
-                <ul class="text-gray-500 space-y-4 font-semibold text-sm">
-                    <li><a href="#" class="hover:text-white transition-all italic uppercase">Whitelist App</a></li>
-                    <li><a href="#" class="hover:text-white transition-all italic uppercase">Supporto Tecnico</a></li>
-                    <li><a href="#" class="hover:text-white transition-all italic uppercase">Partner Program</a></li>
+                <h4 class="orbitron text-xs font-bold text-[#ff6b00] mb-8 tracking-widest">INFRASTRUCTURE</h4>
+                <ul class="text-[10px] space-y-6 orbitron tracking-[3px] text-white/40">
+                    <li><a href="#" class="hover:text-white transition">CONNECT_TO_IP</a></li>
+                    <li><a href="#" class="hover:text-white transition">DATABASE_LOGS</a></li>
+                    <li><a href="#" class="hover:text-white transition">STORE_ACCESS</a></li>
                 </ul>
             </div>
 
             <div>
-                <h4 class="font-bold uppercase tracking-[4px] mb-8 text-white text-sm">Legal</h4>
-                <ul class="text-gray-500 space-y-4 font-semibold text-sm">
-                    <li><a href="#" class="hover:text-white transition-all italic uppercase">Terms of Service</a></li>
-                    <li><a href="#" class="hover:text-white transition-all italic uppercase">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-white transition-all italic uppercase">Cookies</a></li>
+                <h4 class="orbitron text-xs font-bold text-[#ff6b00] mb-8 tracking-widest">PROTOCOL</h4>
+                <ul class="text-[10px] space-y-6 orbitron tracking-[3px] text-white/40">
+                    <li><a href="#" class="hover:text-white transition">PRIVACY_V1</a></li>
+                    <li><a href="#" class="hover:text-white transition">RULES_V4.2</a></li>
+                    <li><a href="#" class="hover:text-white transition">TERMS_OF_ENGAGEMENT</a></li>
                 </ul>
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-600 uppercase tracking-widest font-bold">
-            <div>&copy; <?php echo date("Y"); ?> VeltrixRP. All rights reserved.</div>
-            <div class="mt-4 md:mt-0 flex items-center">
-                DEVELOPED WITH <i class="fa-solid fa-heart mx-2 text-orange-600"></i> BY <a href="https://rootlink.it" class="ml-2 text-white hover:text-orange-accent transition">ROOTLINK.IT</a>
+        <div class="max-w-7xl mx-auto mt-40 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center italic">
+            <div class="orbitron text-[9px] tracking-[4px] text-white/20">&copy; 2024 VELTRIXRP // ALL_SYSTEMS_OPERATIONAL</div>
+            <div class="orbitron text-[9px] tracking-[4px] text-white/20 mt-4 md:mt-0">
+                CRAFTED BY <a href="https://rootlink.it" class="text-white/40 hover:text-[#ff6b00] transition">ROOTLINK.IT</a>
             </div>
         </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
+        AOS.init({ duration: 1000, once: true });
+
+        const glow = document.getElementById('cursor-glow');
+        window.addEventListener('mousemove', (e) => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
         });
 
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('bg-black/90', 'backdrop-blur-md', 'py-2', 'mt-0');
-                nav.classList.remove('mt-6');
+            if (window.scrollY > 100) {
+                nav.style.backgroundColor = 'rgba(2, 2, 2, 0.95)';
+                nav.style.padding = '20px 48px';
+                nav.style.borderBottom = '1px solid rgba(255,107,0,0.2)';
             } else {
-                nav.classList.remove('bg-black/90', 'backdrop-blur-md', 'py-2', 'mt-0');
-                nav.classList.add('mt-6');
+                nav.style.backgroundColor = 'transparent';
+                nav.style.padding = '24px 48px';
+                nav.style.borderBottom = 'none';
             }
         });
     </script>
