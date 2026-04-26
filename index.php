@@ -161,8 +161,8 @@
             <div>
                 <h4 class="font-bold uppercase tracking-widest mb-8 text-white">Supporto</h4>
                 <ul class="text-gray-500 space-y-4 uppercase font-semibold text-sm">
-                    <li><a href="#" class="hover:orange-accent transition italic">Termini di Servizio</a></li>
-                    <li><a href="#" class="hover:orange-accent transition italic">Contattaci</a></li>
+                    <li><a href="https://regolamento.veltrixrp.it" class="hover:orange-accent transition italic">Regolamento</a></li>
+                    <li><a href="#mailto:info@veltrixrp.it" class="hover:orange-accent transition italic">Contattaci</a></li>
                     <li><a href="#" class="hover:orange-accent transition italic">Wiki Server</a></li>
                 </ul>
             </div>
