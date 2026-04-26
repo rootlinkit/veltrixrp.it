@@ -151,7 +151,6 @@
         <div class="loader-bar">
             <div class="loader-progress"></div>
         </div>
-        <div class="mt-4 font-gta tracking-[5px] text-xs opacity-50">INITIALIZING_SYSTEM</div>
     </div>
 
     <nav id="navbar" class="fixed w-full z-[100] px-12 py-8 flex justify-between items-center transition-all duration-500">
