@@ -173,7 +173,9 @@
         </div>
         <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 uppercase tracking-widest font-bold">
             <div>&copy; <?php echo date("Y"); ?> VeltrixRP. Tutti i diritti riservati.</div>
-            <div class="mt-4 md:mt-0 italic">Not affiliated with Rockstar Games or Cfx.re</div>
+            <div class="mt-4 md:mt-0 italic">
+                Created and hosted by <a href="https://rootlink.it" target="_blank" class="hover:text-[#ff6b00] transition-colors duration-300">RootLink.it</a>
+            </div>
         </div>
     </footer>
 
