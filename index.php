@@ -203,11 +203,11 @@
                 </div>
                 <div class="grid grid-cols-2 gap-8 mt-12">
                     <div>
-                        <h4 class="text-[#ff6b00] font-gta text-4xl">300K+</h4>
+                        <h4 class="text-[#ff6b00] font-gta text-4xl">100+</h4>
                         <p class="text-xs uppercase tracking-widest opacity-50">Utenti Registrati</p>
                     </div>
                     <div>
-                        <h4 class="text-[#ff6b00] font-gta text-4xl">144</h4>
+                        <h4 class="text-[#ff6b00] font-gta text-4xl">120</h4>
                         <p class="text-xs uppercase tracking-widest opacity-50">FPS Medi</p>
                     </div>
                 </div>
