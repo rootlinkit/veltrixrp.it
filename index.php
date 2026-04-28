@@ -159,8 +159,7 @@
             <div class="hidden lg:flex gap-10">
                 <a href="#" class="nav-item">Dashboard</a>
                 <a href="https://store.veltrixrp.it" class="nav-item">Store</a>
-                <a href="#" class="nav-item">Regolamento</a>
-                <a href="#" class="nav-item">Whitelist</a>
+                <a href="https://regolamento.veltrixrp.it" class="nav-item">Regolamento</a>
             </div>
         </div>
         <div class="flex items-center gap-8">
